@@ -86,15 +86,13 @@ The resulting feature vector length was 8460, which took 14.26 Seconds to train 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
 In cell 7, `slide_windows()` defines the sliding window search.
-Once the region of interest had been limited from 400 to 720, I found a scale of 1.5 
-and an overlap of 0.5 gave the best results with fewest false positives and missed
-identifications.
+Once the region of interest had been limited from 400 to 720, I found combining scales of 1.5 and 1.0 and an overlap of 0.5 gave the best results with fewest false positives and missed identifications.
 
 ![alt text][image6]
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-As stated, using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector provided the highest accuracy in my tests.  Here are some example images:
+As stated, using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector provided the highest accuracy in my tests.  I improved the classifier accuracy by modifying the C parameter to 0.01. Here are some example images:
 
 ![alt text][image7]
 ---
